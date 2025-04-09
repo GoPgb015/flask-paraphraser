@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paraphrase Pro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Paraphrase Pro</h1>
+        <p>Transform your text with style!</p>
+
+        <div class="input-section">
+            <div class="tabs">
+                <button class="tab active" onclick="showTab('manual')">Manual Input</button>
+                <button class="tab" onclick="showTab('upload')">Upload PDF</button>
+            </div>
+
+            <form id="paraphrase-form" enctype="multipart/form-data">
+                <div id="manual-input" class="input-tab active">
+                    <textarea name="text" id="text-input" placeholder="Enter your text here..."></textarea>
+                </div>
+                <div id="upload-input" class="input-tab">
+                    <input type="file" name="pdf_file" id="pdf-file" accept=".pdf">
+                </div>
+
+                <label for="style">Choose Style:</label>
+                <select name="style" id="style">
+                    <option value="Simple">Simple</option>
+                    <option value="Grammar Correction">Grammar Correction</option>
+                    <option value="Academic Style">Academic Style</option>
+                    <option value="Creative">Creative</option>
+                    <option value="Special">Special</option>
+                </select>
+
+                <button type="submit">Paraphrase</button>
+            </form>
+        </div>
+
+        <div id="result" class="result-section">
+            <h2>Result</h2>
+            <div class="text-box">
+                <h3>Original Text</h3>
+                <p id="original-text"></p>
+            </div>
+            <div class="text-box">
+                <h3>Paraphrased Text</h3>
+                <p id="paraphrased-text"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
