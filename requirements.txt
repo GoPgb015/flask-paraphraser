@@ -6,3 +6,4 @@ torch
 gunicorn
 protobuf
 tiktoken
+blobfile
