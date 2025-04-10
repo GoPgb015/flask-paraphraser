@@ -4,3 +4,5 @@ language-tool-python
 PyPDF2
 torch
 gunicorn
+protobuf
+tiktoken
